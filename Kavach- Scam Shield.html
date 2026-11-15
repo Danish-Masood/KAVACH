@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kavach · Scam Shield</title>
+<style>
+:root{--bg:#f6f4ef;--card:#fff;--ink:#1c1b19;--mut:#6b675f;--line:#e2ded4;--acc:#0f5c4d;--red:#c0392b;--redbg:#fdecea;--amb:#b7791f;--ambbg:#fdf3dc;--grn:#1e7e4a;--grnbg:#e5f5ec;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141412;--card:#1e1d1a;--ink:#f0ede6;--mut:#9b968b;--line:#34322d;--acc:#4fc3a8;--red:#ff7b6b;--redbg:#3a1e1b;--amb:#f0b64a;--ambbg:#3a2f16;--grn:#5fd391;--grnbg:#173023;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#141412;--card:#1e1d1a;--ink:#f0ede6;--mut:#9b968b;--line:#34322d;--acc:#4fc3a8;--red:#ff7b6b;--redbg:#3a1e1b;--amb:#f0b64a;--ambbg:#3a2f16;--grn:#5fd391;--grnbg:#173023;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.w{max-width:760px;margin:0 auto;padding:20px 16px 60px}
+h1{font:700 28px/1.1 Georgia,serif;margin:0}h1 span{color:var(--acc)}
+.sub{color:var(--mut);margin:4px 0 16px}
+nav{display:flex;gap:6px;margin-bottom:16px;overflow-x:auto}
+nav button{flex:1;min-width:90px;padding:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;font:600 14px inherit;cursor:pointer}
+nav button.on{background:var(--acc);color:var(--bg);border-color:var(--acc)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:14px}
+label{display:block;font-size:13px;font-weight:600;color:var(--mut);margin:10px 0 4px}
+textarea,input,select{width:100%;padding:10px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);font:inherit}
+textarea{min-height:110px;resize:vertical}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:10px}
+.btn{padding:11px 16px;border-radius:10px;border:1px solid var(--acc);background:var(--acc);color:var(--bg);font:700 15px inherit;cursor:pointer}
+.btn.g{background:transparent;color:var(--acc)}.btn.r{background:var(--red);border-color:var(--red);color:#fff}
+.chip{padding:6px 10px;font-size:13px;border:1px dashed var(--line);border-radius:20px;background:transparent;color:var(--ink);cursor:pointer}
+.res{border-radius:14px;padding:16px;margin-bottom:14px;border:2px solid}
+.res.red{background:var(--redbg);border-color:var(--red)}.res.amb{background:var(--ambbg);border-color:var(--amb)}.res.grn{background:var(--grnbg);border-color:var(--grn)}
+.big{font:700 24px/1.2 Georgia,serif}.red .big{color:var(--red)}.amb .big{color:var(--amb)}.grn .big{color:var(--grn)}
+.bar{height:8px;background:var(--line);border-radius:6px;margin:10px 0;overflow:hidden}.bar i{display:block;height:100%}
+ul{padding-left:20px;margin:8px 0}li{margin:4px 0}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-bottom:14px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px}.stat b{display:block;font:700 28px Georgia,serif}.stat span{color:var(--mut);font-size:13px}
+.log{border-top:1px solid var(--line);padding:10px 0}.log:first-child{border:0}
+.tag{display:inline-block;font-size:12px;font-weight:700;padding:2px 8px;border-radius:10px}
+.tag.red{background:var(--redbg);color:var(--red)}.tag.amb{background:var(--ambbg);color:var(--amb)}.tag.grn{background:var(--grnbg);color:var(--grn)}
+.phone{border:6px solid var(--ink);border-radius:28px;padding:14px;max-width:340px;margin:10px auto;background:var(--bg)}
+.small{font-size:13px;color:var(--mut)}.hide{display:none}
+</style></head><body><div class="w">
+<h1>Kavach <span>·</span> Scam Shield</h1>
+<p class="sub">Forward anything suspicious. Get a clear verdict in your language, out loud.</p>
+<nav><button data-t="scan" class="on">Scan</button><button data-t="fam">Family</button><button data-t="dash">Dashboard</button></nav>
+
+<section id="scan">
+<div class="card">
+<label for="txt">Paste a message, link, UPI request, or speak it</label>
+<textarea id="txt" placeholder="e.g. Papa I am in trouble, send 20000 rupees right now. Don’t tell anyone."></textarea>
+<div class="row">
+<select id="lang" style="width:auto"><option value="en-IN">English</option><option value="hi-IN">हिन्दी</option><option value="ml-IN">മലയാളം</option><option value="ar-SA">العربية</option></select>
+<button class="btn" id="go">Check it</button>
+<button class="btn g" id="mic">🎤 Speak</button>
+</div>
+<div class="row"><span class="small">Try:</span>
+<button class="chip" data-s="upi://collect?pa=refund.desk@okaxis&pn=Refund&am=4999&tn=Enter PIN to receive refund">Fake UPI collect</button>
+<button class="chip" data-s="Papa I am in trouble, accident happened. Send 20000 rupees right now. Don’t tell mummy.">Cloned-voice style</button>
+<button class="chip" data-s="Dear customer your KYC is expired and account will be blocked today. Install https://bit.ly/kyc-update.apk and share OTP.">KYC + APK</button>
+<button class="chip" data-s="Hi, your order is out for delivery. Pay ₹120 on delivery.">Normal message</button>
+</div></div>
+<div id="out"></div>
+</section>
+
+<section id="fam" class="hide">
+<div class="card"><b>Family circle</b>
+<p class="small">Set this up once with your family. Data stays in this browser only.</p>
+<label for="fn">Trusted co-signer’s name</label><input id="fn" placeholder="e.g. Aunt Fatima">
+<label for="fq">Secret question (only family knows)</label><input id="fq" placeholder="e.g. What was our first car?">
+<label for="fa">Secret answer</label><input id="fa" placeholder="e.g. Maruti 800">
+<label for="fl">Ask co-signer for payments of ₹ or more</label><input id="fl" type="number" min="0">
+<div class="row"><button class="btn" id="save">Save</button><span id="saved" class="small"></span></div></div>
+<div class="card"><b>Co-signer’s phone (demo)</b>
+<p class="small">This is what the relative sees when a risky payment is flagged.</p>
+<div class="phone" id="phone"></div></div>
+</section>
+
+<section id="dash" class="hide">
+<div class="stats" id="stats"></div>
+<div class="card"><b>Incident log</b><div id="log"></div>
+<div class="row"><button class="btn g" id="reset">Clear all data</button></div></div>
+</section>
+
+<p class="small">Kavach runs fully in your browser. It uses transparent rules, not “deepfake detection”. A cloned voice can’t be reliably spotted, so Kavach asks your family’s secret question instead. No bank or card data is stored.</p>
+</div>
+<script>
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+let S={fam:{name:"",q:"",a:"",limit:5000},log:[]};
+try{const r=localStorage.getItem("kavach");if(r)S=Object.assign(S,JSON.parse(r))}catch(e){}
+const save=()=>{try{localStorage.setItem("kavach",JSON.stringify(S))}catch(e){}};
+
+// ---- Rule engine ----
+const RULES=[
+[/\botp\b|one.?time pass|\bcvv\b|\bpin\b|ओटीपी/i,35,"Asks for an OTP, PIN or CVV. Real banks never do."],
+[/urgent|immediately|right now|within \d+ ?(min|hour)|last warning|today itself|turant|abhi|तुरंत|अभी|जल्दी/i,15,"Creates panic and urgency."],
+[/kyc|account.{0,30}(block|suspend|freez|clos)|खाता.*बंद/i,25,"Threatens to block your account or asks for KYC update."],
+[/lottery|prize|winner|lucky draw|you have won|cashback|reward point|इनाम/i,25,"Promises a prize or reward you never applied for."],
+[/\.apk\b|install .{0,20}app|anydesk|teamviewer|quicksupport|screen ?share/i,35,"Asks you to install an app or share your screen."],
+[/bit\.ly|tinyurl|t\.co\/|cutt\.ly|rb\.gy|is\.gd|shorturl/i,20,"Uses a shortened link that hides the real site."],
+[/https?:\/\/[^\s]*\.(xyz|top|click|live|icu|buzz|info|cfd)\b/i,20,"Link points to a suspicious web address."],
+[/gift ?card|bitcoin|crypto|western union|google play code/i,20,"Asks for payment in gift cards or crypto."],
+[/don.?t tell|do not tell|keep (it )?secret|kisi ko mat|मत बताना/i,20,"Tells you to keep it secret from family."],
+[/arrest|police case|customs|cbi|digital arrest|court notice|गिरफ्तार/i,30,"Threatens arrest or legal action (a common scam script)."],
+[/work from home|earn .{0,15}per day|task.{0,15}(like|subscribe)|part.?time job/i,20,"Looks like a fake job or task-for-money offer."]];
+const FAM1=/papa|mummy|mom\b|dad\b|beta\b|bhai|didi|son\b|daughter|पापा|मम्मी|बेटा|भैया|बाबा|ഉപ്പ|അമ്മ|അച്ഛൻ|بابا|ماما|يا أبي/i;
+const FAM2=/trouble|accident|hospital|arrest|police|jail|emergency|stuck|lost my|phone broke|new number|मुसीबत|दुर्घटना|अस्पताल|नंबर बदल|حادث|مشكلة|ആശുപത്രി/i;
+function amountOf(t,upi){
+ if(upi&&upi.am){const n=parseFloat(upi.am);if(!isNaN(n))return n}
+ const m=t.match(/(?:₹|rs\.?|inr|rupees?)\s?([\d,]+(?:\.\d+)?)/i)||t.match(/([\d,]{3,}(?:\.\d+)?)\s?(?:₹|rs\b|rupees?|inr|रुपय)/i);
+ return m?parseFloat(m[1].replace(/,/g,"")):0}
+function parseUPI(t){
+ const m=t.match(/upi:\/\/(pay|collect|mandate)\?[^\s]+/i);if(!m)return null;
+ try{const u=new URL(m[0].replace(/^upi:/i,"https:"));const o=Object.fromEntries(u.searchParams);o.kind=m[1].toLowerCase();o.raw=m[0];return o}catch(e){return{kind:m[1].toLowerCase()}}}
+function analyse(t){
+ let score=0,why=[],fam=false,upi=parseUPI(t);
+ RULES.forEach(([re,w,msg])=>{if(re.test(t)){score+=w;why.push(msg)}});
+ if(upi){
+  if(upi.kind==="collect"||upi.kind==="mandate"){score+=65;why.push("This is a UPI “collect” request. Approving it takes money OUT of your account. You never enter a PIN to receive money.")}
+  else if(!upi.pn){score+=10;why.push("UPI payment link has no verified payee name.")}}
+ if(/collect request|enter (your )?upi pin to (receive|get)|accept .{0,15}to receive|pin.{0,25}receive/i.test(t)&&!(upi&&upi.kind==="collect")){score+=45;why.push("Claims you must enter your PIN or accept a request to receive money. This is always a scam.")}
+ if(FAM1.test(t)&&FAM2.test(t)){fam=true;score+=40;why.push("Looks like a family emergency plea. This is the classic AI voice-clone scam.")}
+ const amt=amountOf(t,upi);
+ if(amt>=S.fam.limit&&amt>0){score+=15;why.push("Amount ₹"+amt.toLocaleString("en-IN")+" is above your family’s co-sign limit.")}
+ score=Math.min(100,score);
+ const lvl=score>=60?"red":score>=30?"amb":"grn";
+ if(lvl==="grn"&&!why.length)why.push("No scam patterns found. Still, never share OTPs or PINs.");
+ return{score,why,lvl,fam,amt,upi}}
+
+// ---- Speech ----
+const V={
+"en-IN":{red:"Stop! This looks like a scam. Do not pay or share any code.",amb:"Be careful. This looks suspicious. Check with your family first.",grn:"This looks safe, but never share your OTP or PIN.",fam:"Ask your family’s secret question before sending money."},
+"hi-IN":{red:"रुकिए! यह धोखाधड़ी लगती है। पैसे न भेजें और कोई कोड न बताएं।",amb:"सावधान रहें। यह संदिग्ध लगता है। पहले परिवार से पूछ लें।",grn:"यह सुरक्षित लगता है, लेकिन ओटीपी या पिन कभी न बताएं।",fam:"पैसे भेजने से पहले परिवार का गुप्त सवाल पूछिए।"},
+"ml-IN":{red:"നിൽക്കൂ! ഇത് തട്ടിപ്പായി തോന്നുന്നു. പണം അയയ്ക്കരുത്, കോഡ് പറയരുത്.",amb:"ശ്രദ്ധിക്കുക. ഇത് സംശയാസ്പദമാണ്. ആദ്യം വീട്ടുകാരോട് ചോദിക്കുക.",grn:"ഇത് സുരക്ഷിതമായി തോന്നുന്നു, പക്ഷേ ഒടിപി ആരോടും പറയരുത്.",fam:"പണം അയയ്ക്കുന്നതിന് മുമ്പ് കുടുംബത്തിന്റെ രഹസ്യ ചോദ്യം ചോദിക്കുക."},
+"ar-SA":{red:"توقف! يبدو هذا احتيالاً. لا تدفع ولا تشارك أي رمز.",amb:"احذر. هذا مشبوه. اسأل عائلتك أولاً.",grn:"يبدو آمناً، لكن لا تشارك رمز التحقق أو الرقم السري أبداً.",fam:"اسأل سؤال العائلة السري قبل إرسال أي مال."}};
+function speak(txt,lang){try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(txt);u.lang=lang;speechSynthesis.speak(u)}catch(e){}}
+
+// ---- Scan UI ----
+let cur=null;
+function check(){
+ const t=$("txt").value.trim();if(!t)return;
+ const a=analyse(t),lang=$("lang").value;
+ const needCo=S.fam.name&&a.amt>0&&(a.amt>=S.fam.limit||a.lvl==="red");
+ const entry={id:Date.now(),t:new Date().toLocaleString(),lvl:a.lvl,score:a.score,txt:t.slice(0,140),amt:a.amt,status:needCo?"pending":null,fam:a.fam};
+ S.log.unshift(entry);save();cur={a,entry,lang};render();
+ const v=V[lang];speak(v[a.lvl]+(a.fam?" "+v.fam:""),lang)}
+function render(){
+ if(!cur)return;const{a,entry,lang}=cur;
+ const title={red:"🛑 DANGER: likely scam",amb:"⚠️ Suspicious: be careful",grn:"✅ Looks safe"}[a.lvl];
+ const col={red:"var(--red)",amb:"var(--amb)",grn:"var(--grn)"}[a.lvl];
+ let h=`<div class="res ${a.lvl}"><div class="big">${title}</div><div class="bar"><i style="width:${a.score}%;background:${col}"></i></div>
+ <b>Risk score ${a.score}/100</b><ul>${a.why.map(w=>`<li>${esc(w)}</li>`).join("")}</ul>
+ <p style="font-size:18px;margin:8px 0"><b>${esc(V[lang][a.lvl])}</b></p>
+ <div class="row"><button class="btn g" id="rep">🔊 Hear again</button></div></div>`;
+ if(a.upi)h+=`<div class="card"><b>UPI details</b><p class="small">Type: ${esc(a.upi.kind)} · Payee: ${esc(a.upi.pn||"unknown")} · ID: ${esc(a.upi.pa||"unknown")} · Amount: ${a.upi.am?"₹"+esc(a.upi.am):"not set"}</p></div>`;
+ if(a.fam){h+=`<div class="card"><b>🔐 Family challenge</b>`;
+  if(S.fam.q)h+=`<p>Ask the caller: <b>“${esc(S.fam.q)}”</b></p><label for="ans">What did they answer?</label><input id="ans" placeholder="Type their answer"><div class="row"><button class="btn" id="chk">Verify</button></div><div id="cres"></div>`;
+  else h+=`<p>No secret question is set yet. Create one in the Family tab, then hang up and call your relative back on their saved number.</p>`;
+  h+=`</div>`}
+ if(entry.status)h+=`<div class="card" id="co"></div>`;
+ $("out").innerHTML=h;
+ $("rep").onclick=()=>speak(V[lang][a.lvl],lang);
+ if($("chk"))$("chk").onclick=()=>{
+  const ok=$("ans").value.trim().toLowerCase()===S.fam.a.trim().toLowerCase()&&S.fam.a;
+  $("cres").innerHTML=ok?`<p style="color:var(--grn)"><b>Answer matches.</b> Still hang up and call back on a number you already have.</p>`:`<p style="color:var(--red)"><b>Wrong answer. This is NOT your family member.</b> Hang up and report it.</p>`;
+  if(!ok){entry.lvl="red";entry.score=100;save();speak(V[lang].red,lang)}};
+ coRender()}
+function coRender(){
+ if(!cur||!cur.entry.status||!$("co"))return;const e=cur.entry;
+ const m={pending:`⏳ Waiting for <b>${esc(S.fam.name)}</b> to approve ₹${e.amt.toLocaleString("en-IN")}. Do not pay yet. (Open the Family tab to act as them.)`,approved:`✅ ${esc(S.fam.name)} approved this payment.`,denied:`⛔ ${esc(S.fam.name)} denied this payment. Do not send money.`}[e.status];
+ $("co").innerHTML=`<b>👪 Co-signer check</b><p>${m}</p>`}
+$("go").onclick=check;
+document.querySelectorAll(".chip").forEach(c=>c.onclick=()=>{$("txt").value=c.dataset.s;check()});
+$("mic").onclick=()=>{
+ const R=window.SpeechRecognition||window.webkitSpeechRecognition;
+ if(!R){alert("Voice input isn’t supported in this browser. Please type or paste instead.");return}
+ const r=new R();r.lang=$("lang").value;r.onresult=e=>{$("txt").value=e.results[0][0].transcript;check()};r.onerror=()=>{};r.start()};
+
+// ---- Family ----
+function famInit(){$("fn").value=S.fam.name;$("fq").value=S.fam.q;$("fa").value=S.fam.a;$("fl").value=S.fam.limit}
+$("save").onclick=()=>{S.fam={name:$("fn").value.trim(),q:$("fq").value.trim(),a:$("fa").value.trim(),limit:Math.max(0,+$("fl").value||5000)};save();$("saved").textContent="Saved ✓";setTimeout(()=>$("saved").textContent="",2000)};
+function phone(){
+ const p=S.log.filter(e=>e.status==="pending");
+ $("phone").innerHTML=p.length?p.map(e=>`<p><b>${esc(S.fam.name||"Co-signer")}</b>, a family member wants to pay <b>₹${e.amt.toLocaleString("en-IN")}</b>.<br><span class="small">Risk ${e.score}/100 · “${esc(e.txt.slice(0,70))}…”</span></p>
+ <div class="row"><button class="btn" data-a="approved" data-i="${e.id}">Approve</button><button class="btn r" data-a="denied" data-i="${e.id}">Deny</button></div>`).join("<hr>"):`<p class="small" style="text-align:center">No payments waiting for approval.</p>`;
+ $("phone").querySelectorAll("button").forEach(b=>b.onclick=()=>{const e=S.log.find(x=>x.id==b.dataset.i);if(e){e.status=b.dataset.a;save();phone();if(cur&&cur.entry.id===e.id){coRender()}}})}
+
+// ---- Dashboard ----
+function dash(){
+ const n=S.log.length,bl=S.log.filter(e=>e.lvl==="red").length,fm=S.log.filter(e=>e.fam).length,dn=S.log.filter(e=>e.status==="denied").length;
+ $("stats").innerHTML=[["Scanned",n],["Scams blocked",bl],["Family-emergency plea",fm],["Co-sign denied",dn]].map(([l,v])=>`<div class="stat"><b>${v}</b><span>${l}</span></div>`).join("");
+ $("log").innerHTML=S.log.length?S.log.map(e=>`<div class="log"><span class="tag ${e.lvl}">${{red:"DANGER",amb:"SUSPICIOUS",grn:"SAFE"}[e.lvl]} ${e.score}</span> <span class="small">${esc(e.t)}${e.status?" · co-sign: "+e.status:""}</span><div>${esc(e.txt)}</div></div>`).join(""):`<p class="small">Nothing scanned yet.</p>`}
+$("reset").onclick=()=>{if(confirm("Delete all scans and family settings?")){S={fam:{name:"",q:"",a:"",limit:5000},log:[]};save();cur=null;$("out").innerHTML="";famInit();dash();phone()}};
+
+document.querySelectorAll("nav button").forEach(b=>b.onclick=()=>{
+ document.querySelectorAll("nav button").forEach(x=>x.classList.toggle("on",x===b));
+ ["scan","fam","dash"].forEach(s=>$(s).classList.toggle("hide",s!==b.dataset.t));
+ if(b.dataset.t==="fam")phone();if(b.dataset.t==="dash")dash()});
+famInit();
+</script></body></html>
